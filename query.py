@@ -1,14 +1,15 @@
 import sqlite3
 
 
-def create_db():
-    with open("create_table.sql", "r") as file:
+def query_1():
+    with open("query_1.sql", "r") as file:
         sql = file.read()
 
     with sqlite3.connect("learning.db") as con:
         cur = con.cursor()
         cur.executescript(sql)
+        return cur.fetchall()
 
 
 if __name__ == "__main__":
-    create_db()
+    print(query_1())
