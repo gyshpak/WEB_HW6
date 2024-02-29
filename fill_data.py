@@ -9,6 +9,7 @@ NUMBER_STUDENTS = randint(30, 50)
 NUMBER_GROUPS = 3
 NUMBER_SUBJECTS = randint(5, 8)
 NUMBER_TEACHERS = randint(3, 5)
+# NUMBER_ASSESSMENTS = randint(10, 20)
 
 
 def generate_fake_data(
@@ -97,7 +98,7 @@ def prepare_data(students, subjects, teachers) -> tuple():
     for_assessments = []
     for id_st in range(1, NUMBER_STUDENTS + 1):
         for id_sb in range(1, NUMBER_SUBJECTS + 1):
-            for _ in range(1, 2):
+            for _ in range(1, randint(10, 20)):
                 for_assessments.append(
                     (
                         id_st,

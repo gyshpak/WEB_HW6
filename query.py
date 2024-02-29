@@ -7,7 +7,7 @@ def query_1():
 
     with sqlite3.connect("learning.db") as con:
         cur = con.cursor()
-        cur.executescript(sql)
+        cur.execute(sql)
         return cur.fetchall()
 
 
