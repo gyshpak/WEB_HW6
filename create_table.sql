@@ -45,4 +45,6 @@ CREATE TABLE assessment_subj (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
     FOREIGN KEY (fr_sb) REFERENCES subjects (id_sb)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
