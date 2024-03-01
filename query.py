@@ -1,8 +1,9 @@
 import sqlite3
+import sys
 
 
-def query_1():
-    with open("query_1.sql", "r") as file:
+def query_1(args):
+    with open(args, "r") as file:
         sql = file.read()
 
     with sqlite3.connect("learning.db") as con:
@@ -11,5 +12,20 @@ def query_1():
         return cur.fetchall()
 
 
+def formatted_grades(args):
+    return_args = []
+    iter = 1
+    for el in args:
+        new_args = list(map(lambda x: "None" if x == None else x, el))
+        return_args.append(("  {:<24}|" * len(new_args)).format(*new_args))
+        iter += 1
+    return return_args
+
+
 if __name__ == "__main__":
-    print(query_1())
+    if len(sys.argv) != 2:
+        print("Vrong argument try again")
+    else:
+        args = query_1(sys.argv[1])
+        for print_args in formatted_grades(args):
+            print(print_args)
