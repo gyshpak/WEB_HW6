@@ -86,9 +86,9 @@ def prepare_data(students, subjects, teachers) -> tuple():
 
     start_date = date(year=2023, month=9, day=1)  # умовний початок навчання
 
-    """ формуємо оцінки з весами (наші студенти більш розумні ніж тупі ;-)"""
+    """ формуємо оцінки та їх ваги (наші студенти більш розумні ніж тупі ;-)"""
     assess = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    weights_ = [1, 2, 3, 4, 5, 10, 10, 20, 20, 15, 5, 5]
+    weights_ = [1, 2, 3, 4, 5, 5, 10, 20, 25, 15, 5, 5]
 
     for_assessments = []
     for id_st in range(1, NUMBER_STUDENTS + 1):
