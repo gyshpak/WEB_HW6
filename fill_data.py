@@ -103,7 +103,6 @@ def prepare_data(students, subjects, teachers) -> tuple():
                         id_st,
                         id_sb,
                         *choices(assess, weights_),
-                        # randint(1, 12),
                         faker.Faker().date_between(
                             start_date=start_date, end_date="today"
                         ),
